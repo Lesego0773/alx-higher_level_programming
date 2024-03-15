@@ -1,4 +1,8 @@
--- Updates the score of Bob to 10 in the table second_table in my MySQL server.
-UPDATE `second_table`
-SET `score` = 10
-WHERE `name` = "Bob";
+-- Displays the 3 cities with the highest average
+-- temperatures between July and August.
+SELECT `city`, AVG(`value`) AS `avg_temp`
+FROM `temperatures`
+WHERE `month` = 7 OR `month` = 8
+GROUP BY `city`
+ORDER BY `avg_temp` DESC
+LIMIT 3;
